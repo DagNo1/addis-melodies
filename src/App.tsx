@@ -1,29 +1,23 @@
-import { useState } from 'react'
-function App() {
-  const [count, setCount] = useState(0)
+import { useGetPostByIdQuery } from "./services/apiService"
 
+function App() {
+   const { data, error, isLoading } = useGetPostByIdQuery('1')
+  console.log(import.meta.env.VITE_EXAMPLE_API_BASE_URL);
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={""} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={""} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <div className="App">
+      {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        <>
+          <h3>{data.title}</h3>
+          <p>{data.body}</p>
+          <h3>Here is the post Id {data.id} and here is the user Id {data.userId}</h3>
+        </>
+      ) : null}
+    </div>
     </>
   )
 }
