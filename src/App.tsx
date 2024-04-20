@@ -1,3 +1,4 @@
+import { Button } from "theme-ui";
 import { useGetPostByIdQuery } from "./services/apiService"
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <h3>{data.title}</h3>
           <p>{data.body}</p>
           <h3>Here is the post Id {data.id} and here is the user Id {data.userId}</h3>
+          <Button variant="main">Hello</Button>
         </>
       ) : null}
     </div>
