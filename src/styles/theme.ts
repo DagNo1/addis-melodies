@@ -58,13 +58,12 @@ export const theme: Theme = {
       md: '1.2rem'
     },
     buttons: {
-      main: {
-        bg: 'primary',
-        color: "secondary",
-        border: "solid 1px red"
+      primary: {
+        fontWeight: 'bold',
       },
       outlined: {
-        color: 'white',
+        color: 'primary',
+        fontWeight: 'bold',
         border: "solid 0.1rem #e11d48",
         bg: 'background',
       },
