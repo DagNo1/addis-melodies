@@ -62,7 +62,12 @@ export const theme: Theme = {
         bg: 'primary',
         color: "secondary",
         border: "solid 1px red"
-      }
+      },
+      outlined: {
+        color: 'white',
+        border: "solid 0.1rem #e11d48",
+        bg: 'background',
+      },
     }
     
   };
